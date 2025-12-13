@@ -1,9 +1,9 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import heroVideo1 from '../../media/herovid1.mp4';
-import heroVideo2 from '../../media/herovid2.mp4';
-import heroVideo3 from '../../media/herovid3.mp4';
+import heroVideo1 from '../../media/herovid1.mp4?url';
+import heroVideo2 from '../../media/herovid2.mp4?url';
+import heroVideo3 from '../../media/herovid3.mp4?url';
 import homeData from '../../edit_content/pages/home.json';
 
 interface HeroProps {
