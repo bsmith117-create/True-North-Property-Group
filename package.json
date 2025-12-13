@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "true-north-property-group",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node copy-index.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@netlify/functions": "^5.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.9.3",
+    "resend": "^6.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "puppeteer": "^24.22.3",
+    "react-snap": "^1.13.1",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vite-ssg": "^28.1.0"
+  }
+}

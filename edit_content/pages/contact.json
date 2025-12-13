@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "Get in",
+    "titleHighlight": "Touch",
+    "subtitle": "We're here to answer your questions and help you with all your real estate needs."
+  },
+  "contactInfo": {
+    "heading": "Contact Us",
+    "description": "Reach out by phone or email and our team will respond within 24 hours.",
+    "phone": {
+      "label": "Phone",
+      "value": "(703) 672-0374"
+    },
+    "email": {
+      "label": "Email",
+      "value": "Bsmith@tnpghomes.com | Tsmith@tnpghomes.com"
+    },
+    "office": {
+      "label": "Office",
+      "address": "4391 Ridgewood Center Dr, Woodbridge, VA 22192"
+    }
+  },
+  "form": {
+    "heading": "Send Us a Message",
+    "description": "Fill out the form below and we'll get back to you as soon as possible.",
+    "fields": {
+      "firstName": {
+        "label": "First name",
+        "placeholder": "",
+        "required": true
+      },
+      "lastName": {
+        "label": "Last name",
+        "placeholder": "",
+        "required": true
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "",
+        "required": true
+      },
+      "phoneNumber": {
+        "label": "Phone Number",
+        "placeholder": "",
+        "required": false
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your real estate needs...",
+        "required": true
+      }
+    },
+    "submitButton": "Send Message",
+    "successMessage": "Thank you for your message! We'll get back to you soon.",
+    "errorMessage": "Sorry, there was an error sending your message. Please try again or contact us directly."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "colors": {
+    "brandColors": {
+      "primary": "#00A0B0",  
+      "secondary": "#583a1e"
+    },
+    "neutrals": {
+      "darkNeutral": "#242427",
+      "lightNeutral": "#FEFEFE",
+      "secondaryNeutral": "#5A5A5A"
+    }
+  },
+  "typography": {
+    "textFont": {
+      "fontFamily": "Inter",
+      "fontFallback": "sans-serif"
+    }
+  }
+}

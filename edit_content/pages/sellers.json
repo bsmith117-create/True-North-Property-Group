@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "Sell Your Home with",
+    "titleHighlight": "Confidence",
+    "subtitle": "Achieve the best possible outcome with our expert guidance and strategic marketing."
+  },
+  "about": {
+    "sectionLabel": "Our Commitment to Sellers",
+    "heading": "Maximize Your Return, Minimize Your Stress",
+    "content": "Selling your home is a major decision. At True North Property Group, we are dedicated to providing you with a seamless, transparent, and profitable selling experience. We combine market expertise with innovative marketing to showcase your property to the right buyers at the right time."
+  },
+  "journey": {
+    "sectionLabel": "Your Path to a Successful Sale",
+    "heading": "The Home Selling Journey",
+    "subheading": "We guide you through every step of the process",
+    "phases": [
+      {
+        "title": "Phase 1: Walkthrough & Pricing",
+        "steps": [
+          "In-home consultation to evaluate your property.",
+          "Discuss pricing strategies and timing for listing.",
+          "Build a personalized selling plan."
+        ]
+      },
+      {
+        "title": "Phase 2: Preparing Your Home",
+        "steps": [
+          "Declutter and stage key spaces.",
+          "Improve curb appeal and touch up paint.",
+          "Deep clean kitchens, bathrooms, and windows.",
+          "Have professional photos taken of your home."
+        ]
+      },
+      {
+        "title": "Phase 3: Marketing Your Home",
+        "steps": [
+          "Publish listing on MLS in \"Coming Soon\" and then \"Active\" status.",
+          "Market on social media.",
+          "Make virtual tours available.",
+          "Conduct open houses."
+        ]
+      },
+      {
+        "title": "Phase 4: Showings & Offers",
+        "steps": [
+          "Manage showings and collect buyer feedback.",
+          "Review, negotiate, and accept the strongest offer.",
+          "Ratify contract and move toward settlement."
+        ]
+      },
+      {
+        "title": "Phase 5: Under Contract & Closing",
+        "steps": [
+          "Coordinate inspections, appraisal, HOA documents, and title company.",
+          "Manage contingencies and loan approval process.",
+          "Final buyer walkthrough, utilities transfer, and closing day."
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "sectionLabel": "Your Trusted Partner",
+    "heading": "Why Work With True North",
+    "benefits": [
+      {
+        "title": "Expert Pricing & Strategy",
+        "description": "We conduct a comprehensive market analysis to price your home competitively for maximum return."
+      },
+      {
+        "title": "Professional Marketing Exposure",
+        "description": "Our targeted marketing strategies ensure your property reaches a wide audience of qualified buyers."
+      },
+      {
+        "title": "Skilled Negotiations",
+        "description": "We advocate for your best interests, skillfully negotiating offers to achieve your financial goals."
+      },
+      {
+        "title": "Transaction Management from Start to Finish",
+        "description": "Our team manages the entire closing process, ensuring all details are handled for a timely and smooth transaction."
+      }
+    ]
+  },
+  "costs": {
+    "sectionLabel": "Financial Clarity",
+    "heading": "Understanding Seller Costs",
+    "description": "We'll walk you through every dollar so there are no surprises at the closing table.",
+    "costItems": [
+      {
+        "item": "Mortgage Payoff",
+        "description": "Current loan(s) and liens cleared at closing."
+      },
+      {
+        "item": "Commissions",
+        "description": "(3% listing, 3% buyer), fully negotiable."
+      },
+      {
+        "item": "Seller Subsidy",
+        "description": "Optional credit to buyer (1–3%) to help with closing costs."
+      },
+      {
+        "item": "Taxes & Fees",
+        "description": "Transfer taxes, title company fees, deed prep, etc."
+      },
+      {
+        "item": "HOA/Condo Fees",
+        "description": "Disclosure/resale packages, prorated dues, capital contributions (if required)."
+      },
+      {
+        "item": "Other Costs",
+        "description": "Repairs, moving company, and any admin fees."
+      }
+    ]
+  }
+}

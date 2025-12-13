@@ -1,0 +1,59 @@
+{
+  "header": {
+    "title": "About",
+    "titleHighlight": "True North Property Group",
+    "subtitle": "Your trusted guides in the journey of real estate."
+  },
+  "mission": {
+    "sectionLabel": "Our Mission & Values",
+    "heading": "Integrity, Service, and Excellence",
+    "content": "Our mission is to provide an unparalleled real estate experience built on a foundation of trust, comprehensive market knowledge, and an unwavering commitment to our clients' success. We are dedicated to navigating every transaction with the highest level of professionalism and care, ensuring you always find your way home."
+  },
+  "team": {
+    "sectionLabel": "Meet the Team",
+    "heading": "The dedicated professionals guiding our mission.",
+    "members": [
+      {
+        "name": "Tony Smith",
+        "role": "Licensed in Virginia, Maryland, and Washington, D.C., and is a certified military relocation professional"
+      },
+      {
+        "name": "Brandon Smith",
+        "role": "Licensed in Virginia and is a member of the National Association of Realtors and Northern Virginia Association of Realtors."
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "sectionLabel": "What Sets Us Apart",
+    "heading": "The True North Difference",
+    "reasons": [
+      {
+        "title": "Client-First Philosophy",
+        "description": "We center every decision around what is best for you."
+      },
+      {
+        "title": "Unmatched Local Expertise",
+        "description": "Decades of experience across Virginia, Maryland, and Washington, D.C."
+      },
+      {
+        "title": "Data-Driven Strategies",
+        "description": "Thoughtful insights guide pricing, marketing, and negotiations."
+      },
+      {
+        "title": "A Network of Trusted Professionals",
+        "description": "Benefit from our connections to lenders, inspectors, and vendors."
+      },
+      {
+        "title": "Commitment to Community",
+        "description": "We invest in the neighborhoods we serve."
+      },
+      {
+        "title": "Transparent Communication",
+        "description": "Stay informed with clear updates at every step."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to work with a team that cares?",
+    "description": "Let's start the conversation."  }
+}

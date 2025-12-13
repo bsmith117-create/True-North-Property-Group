@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <link rel="icon" type="image/x-icon" href="/media/fivocon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True North Property Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Default Tailwind config (will be overridden by theme.json)
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'tn-black': '#242427',
+              'tn-white': '#FEFEFE',
+              'tn-gray':  '#5A5A5A',
+              'tn-teal':  '#00A0B0',
+              'tn-brown': '#583a1e',
+              'tn-light': '#FEFEFE',
+              'tn-dark':  '#242427',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
