@@ -3,30 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import logoFull from '../media/logo_full.png';
 import logoSingle from '../media/logo_single.png';
 
+
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   // Show/hide on scroll state
   const [showNav, setShowNav] = useState(true);
   const lastScrollYRef = useRef(0);
-  // Timer to delay closing of the Resources submenu so it doesn't disappear
-  const closeTimerRef = useRef<number | null>(null);
 
-  const clearCloseTimer = () => {
-    if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
-    }
-  };
-
-  const scheduleClose = (delay = 250) => {
-    clearCloseTimer();
-    closeTimerRef.current = window.setTimeout(() => {
-      setIsResourcesOpen(false);
-    }, delay);
-  };
-  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
 
   // Detect scroll direction to toggle navbar visibility
   useEffect(() => {
@@ -48,6 +32,7 @@ const Navbar: React.FC = () => {
       lastScrollYRef.current = currentY;
     };
 
+
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -59,17 +44,11 @@ const Navbar: React.FC = () => {
     { name: 'About Us', path: '/about' },
   ];
 
-  const resourceLinks = [
-    { name: 'Mortgage Calculator', path: '/mortgage-calculator' },
-    { name: 'Closing Cost Estimator', path: '/closing-cost-estimator' },
-    { name: 'Financial Assessment', path: '/financial-assessment' },
-  ];
 
   const handleLinkClick = () => {
     setIsOpen(false);
-    setIsResourcesOpen(false);
-    setIsMobileResourcesOpen(false);
   }
+
 
   return (
     <nav className={`bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50 transform transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -90,40 +69,6 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
-              <div
-                className="relative"
-                onMouseEnter={() => { clearCloseTimer(); setIsResourcesOpen(true); }}
-                onMouseLeave={() => scheduleClose(250)}
-              >
-                <button
-                  type="button"
-                  className="text-tn-gray hover:bg-tn-brown hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 flex items-center"
-                  aria-haspopup="true"
-                  aria-expanded={isResourcesOpen}
-                >
-                  Resources
-                  <svg className={`ml-2 h-5 w-5 transition-transform duration-200 ${isResourcesOpen ? 'rotate-180' : 'rotate-0'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-                {isResourcesOpen && (
-                  <div
-                    className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                    role="menu"
-                    aria-orientation="vertical"
-                    onMouseEnter={clearCloseTimer}
-                    onMouseLeave={() => scheduleClose(200)}
-                  >
-                    <div className="py-1" role="none">
-                      {resourceLinks.map((link) => (
-                         <Link key={link.name} to={link.path} onClick={handleLinkClick} className={`${location.pathname === link.path ? 'bg-tn-brown text-white' : 'text-tn-gray'} hover:bg-tn-brown hover:text-white block px-4 py-2 text-sm`} role="menuitem">
-                           {link.name}
-                         </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
               <Link to="/contact" onClick={handleLinkClick} className="bg-tn-brown text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:opacity-90">
                 Contact
               </Link>
@@ -140,6 +85,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
+
       {isOpen && (
         <div className="lg:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -148,23 +94,6 @@ const Navbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <div>
-              <button onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)} className="w-full text-left text-tn-gray hover:bg-tn-brown hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 flex justify-between items-center">
-                Resources
-                <svg className={`h-5 w-5 transition-transform duration-200 ${isMobileResourcesOpen ? 'rotate-180' : 'rotate-0'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              {isMobileResourcesOpen && (
-                <div className="pl-4 mt-1 space-y-1">
-                  {resourceLinks.map((link) => (
-                     <Link key={link.name} to={link.path} onClick={handleLinkClick} className={`${location.pathname === link.path ? 'bg-tn-brown text-white' : 'text-tn-gray'} hover:bg-tn-brown hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300`}>
-                       {link.name}
-                     </Link>
-                  ))}
-                </div>
-              )}
-            </div>
              <Link to="/contact" onClick={handleLinkClick} className="bg-tn-brown text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:opacity-90">
               Contact
             </Link>
@@ -174,5 +103,6 @@ const Navbar: React.FC = () => {
     </nav>
   );
 };
+
 
 export default Navbar;
