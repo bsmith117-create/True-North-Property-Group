@@ -41,24 +41,6 @@ It highlights the firm’s services across Virginia, Maryland, and Washington D.
 └── package.json
 ```
 
-## Getting Started
-
-### Prerequisites
-- Node.js 18+ (Node 20 recommended)
-- npm 9+
-
-### Installation & Local Development
-```bash
-git clone <repo-url>
-cd true-north-property-group
-npm install
-cp .env.example .env   # add your secrets
-npm run dev            # launches the Vite dev server on http://localhost:5173
-```
-
-> ℹ️ Netlify Functions run once the site is deployed or in deploy previews.  
-> Local Vite development focuses on the client UI.
-
 ## Environment Variables
 | Variable | Description |
 | --- | --- |
@@ -66,39 +48,8 @@ npm run dev            # launches the Vite dev server on http://localhost:5173
 | `RESEND_FROM_EMAIL` | Sender address (e.g., `contact@tnpghomes.com`). |
 | `RESEND_TO_EMAIL` | Recipient inbox for contact form submissions. |
 
-Use `.env.example` as the template.
-
-## Available Scripts
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Starts the Vite dev server for local UI work. |
-| `npm run build` | Build production assets (`dist/`) and copy `index.html`. |
-| `npm run preview` | Preview the production build locally. |
-
 ## Content Editing
-Most copy is stored in `edit_content/pages/*.json`. Update those files to change hero text, service descriptions, and contact copy without touching React components.
-
-## Deployment
-The repository already includes `netlify.toml` for Netlify builds:
-```toml
-[build]
-  command  = "npm run build"
-  publish  = "dist"
-  functions = "netlify/functions"
-
-[dev]
-  targetPort = 3000
-```
-
-Typical flows:
-1. Push to the main branch (or open a PR) and let Netlify’s UI build the site automatically.  
-2. Use Netlify’s Deploy Previews in the dashboard to test serverless functions and the contact form.  
-3. Promote a preview to production (or merge to the production branch) from the Netlify UI when ready.
-
-## Netlify Functions
-`netlify/functions/contact-form.ts` validates contact form input, sends emails through Resend, and returns appropriate responses.  
-During Netlify builds (preview or production), the function is automatically bundled with esbuild as configured in `netlify.toml`.
-
----
-
-Need help or have questions? Open an issue or reach out to the project maintainers.
+1. **Open the page file** you want to change inside `edit_content/pages/`.
+2. **Modify the relevant keys** (e.g., `hero.title`, `services.buyers.description`, `testimonials[0].quote`). Keep the structure and array lengths consistent unless you also update the components that render them.
+3. **Validate JSON** syntax—matching braces/quotes and trailing commas are common pitfalls. Most editors provide JSON validation or prettier formatting.
+4. **Commit your changes** once satisfied. Since Netlify deploys from Git, pushing the updated JSON will redeploy the new copy automatically.
