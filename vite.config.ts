@@ -1,6 +1,8 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import yaml from '@rollup/plugin-yaml';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
@@ -16,26 +18,29 @@ export default defineConfig(({ mode }) => {
         historyApiFallback: true,
       },
       publicDir: 'public',
-      plugins: [react()],
+      plugins: [react(), tailwindcss(), yaml()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
       },
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, '.'),
+          '@': path.resolve(import.meta.dirname, 'src'),
         }
       },
       build: {
-        // Generate source maps for better debugging
-        sourcemap: true,
+        // Sourcemaps disabled: Tailwind v4 plugin cannot emit transform sourcemaps
+        // and Rolldown warns when sourcemaps are enabled globally.
+        sourcemap: false,
         // Ensure all assets are included
         assetsInlineLimit: 0,
         // Optimize output for static hosting
         rollupOptions: {
           output: {
-            manualChunks: {
-              vendor: ['react', 'react-dom', 'react-router-dom'],
+            manualChunks: (id: string) => {
+              if (/\/node_modules\/(react|react-dom|react-router-dom)\//.test(id)) {
+                return 'vendor';
+              }
             },
           },
         },

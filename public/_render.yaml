@@ -1,4 +1,0 @@
-routes:
-  - route: /*
-    rewrite: /index.html
-    status: 200

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "./theme.generated.css";
+
+@layer base {
+  body {
+    @apply bg-tn-light text-tn-dark;
+  }
+}

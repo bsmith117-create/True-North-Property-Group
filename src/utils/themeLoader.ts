@@ -1,6 +1,8 @@
+import { parse as parseYaml } from 'yaml';
+
 /**
  * Theme Loader Utility
- * Loads theme configuration from theme.json and dynamically updates Tailwind config
+ * Loads theme configuration from theme.yaml and dynamically updates Tailwind config
  */
 
 interface ThemeConfig {
@@ -24,17 +26,18 @@ interface ThemeConfig {
 }
 
 /**
- * Load theme configuration from theme.json
+ * Load theme configuration from theme.yaml
  * @returns Promise<ThemeConfig | null>
  */
-export async function loadThemeConfig(): Promise<ThemeConfig | null> {
+async function loadThemeConfig(): Promise<ThemeConfig | null> {
   try {
-    const response = await fetch('/edit_content/theme/theme.json');
+    const response = await fetch('/edit_content/theme/theme.yaml');
     if (!response.ok) {
-      throw new Error(`Failed to load theme.json: ${response.statusText}`);
+      throw new Error(`Failed to load theme.yaml: ${response.statusText}`);
     }
-    const themeConfig: ThemeConfig = await response.json();
-    return themeConfig;
+
+    const yamlText = await response.text();
+    return parseYaml(yamlText) as ThemeConfig;
   } catch (error) {
     console.error('Failed to load theme configuration:', error);
     return null;
@@ -46,7 +49,7 @@ export async function loadThemeConfig(): Promise<ThemeConfig | null> {
  * @param themeConfig - Theme configuration object
  * @returns Tailwind config colors and fonts
  */
-export function generateTailwindConfig(themeConfig: ThemeConfig) {
+function generateTailwindConfig(themeConfig: ThemeConfig) {
   if (!themeConfig) {
     return {
       colors: {},

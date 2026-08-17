@@ -1,0 +1,3 @@
+# Controls visibility of the Resources pages in navbar menu and footer section. Set to true to show Resources, false to hide."
+
+enabled: false
