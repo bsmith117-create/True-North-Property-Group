@@ -1,9 +1,9 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import heroVideo1 from '../../../media/Herovid_1.mp4';
-import heroVideo2 from '../../../media/Herovid_2.mp4';
-import heroVideo3 from '../../../media/Herovid_3.mp4';
+import heroVideo1 from '../../../media/HeroVid_1.mp4';
+import heroVideo2 from '../../../media/HeroVid_2.mp4';
+import heroVideo3 from '../../../media/HeroVid_3.mp4';
 import homeData from '../../../edit_content/pages/home.yaml';
 
 const Hero: React.FC = () => {

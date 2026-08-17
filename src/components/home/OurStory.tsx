@@ -1,6 +1,6 @@
 
 import React from 'react';
-import whoWeAre from '../../../media/ourstory.webp';
+import whoWeAre from '../../../media/OurStory.webp';
 import homeData from '../../../edit_content/pages/home.yaml';
 
 const OurStory: React.FC = () => {
